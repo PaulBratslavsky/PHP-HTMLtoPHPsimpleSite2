@@ -3,6 +3,11 @@
 function showNavFunc() { ?>
 
   <style>
+
+    .padding10 {
+      padding: 0 10px;
+    }
+
     nav.main-nav {
       display: flex;
       justify-content: center;
@@ -11,7 +16,9 @@ function showNavFunc() { ?>
       font-size: 2rem;
       font-weight: bold;
 
-      padding: 0 10px;
+      padding: 10px;
+
+      background: #525252;
 
     }
 
@@ -48,16 +55,19 @@ function showNavFunc() { ?>
 
   </style>
 
-  <nav class="main-nav col-md-12">
-      <ul>
-        <li><a href="./index.php">HOME</a></li>
-        <li><a href="#">BOOKS</a></li>
-        <li><a href="#">MOVIES</a></li>
-        <li><a href="#">MUSIC</a></li>
-        <li><a href="./suggest.php">SUGGEST</a></li>
 
-      </ul>
-  </nav>
+    <nav class="main-nav col-md-12">
+      <div class="container padding10">
+        <ul>
+          <li><a href="./index.php">HOME</a></li>
+          <li><a href="#">BOOKS</a></li>
+          <li><a href="#">MOVIES</a></li>
+          <li><a href="#">MUSIC</a></li>
+          <li><a href="./suggest.php">SUGGEST</a></li>
+        </ul>
+      </div>  
+    </nav>
+
 
  <?php }
 

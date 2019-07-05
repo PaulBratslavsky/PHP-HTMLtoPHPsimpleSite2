@@ -46,9 +46,23 @@ include './_Functions/showLandingPage.php';
 ============================== -->
 
 <style>
+.flex-col-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
 header.main-header {
-  background-image: url('./img/texture.jpg');
-  padding: 1rem 0;
+  background: #414141;
+  padding: 0;
+}
+
+div.main-menu {
+  background: white;
 }
 </style>
 
@@ -58,19 +72,14 @@ header.main-header {
      Header  
 ============================== -->
 <header class="main-header">
-    <div class="container"> 
-      <div class="row">
-        <!-- Header -->
-                  
-          <?php showLogoFunc(); ?>
-          <?php socialMenuFunc(); ?>
-          <?php showNavFunc(); ?>
-        
-        <!-- Header Left -->
 
-        
-
-        <!-- /End Header --> 
-      </div>
+    <div class="container flex-col-center">          
+      <?php showLogoFunc(); ?>
+      <?php socialMenuFunc(); ?>
     </div>
+
+    <?php showNavFunc(); ?>
+    
 </header>
+
+<!--   background-image: url('./img/texture.jpg'); -->

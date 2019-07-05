@@ -1,8 +1,14 @@
 <?php 
 
  function showLogoFunc() {?>
+    <style>
+      .logo {
+        padding: 0;
+      }
+
+    </style>
    
-   <div class="col-md-6 logo"><a href="#"><img alt="" src="img/company.png"></a></div>
+   <div class="logo flex1"><a href="#"><img alt="" src="img/company.png"></a></div>
 
  <?php } 
  
