@@ -2,7 +2,6 @@
 <?php $whichSection = 'catalog'; ?>
 
 <?php include './_Components/header.php'; ?>
-<?php include './_Data/data.php'; ?>
 
 <style>
   div.catalog {
@@ -26,34 +25,7 @@
 
   }
 
-  .catalog-card {
-    margin: 1rem;
-
-    display: flex;
-    flex-direction: row;
-
-    width: 150px;
-
-    border: solid 5px #ffffff;
-    border-radius: 5px;
-
-  }
-
-  .catalog-card-content-img {
-    width: 100%;
-  }
-
-  .catalog-card-content-img img {
-    display: block;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-
   @media only screen and (max-width: 400px) {
-      .catalog-card {
-        width: 100%;
-      }
       
       h1.catalog-title {
         text-align: center;
@@ -164,7 +136,7 @@
 
   switch ( catalogId ) {
     case 'books':
-      catalogBackgroundImage.style.background = 'url("./img/books.jpg") no-repeat center bottom';
+      catalogBackgroundImage.style.background = 'url("./img/books.jpg") no-repeat bottom center/cover';
       break;
 
       case 'movies':
