@@ -39,15 +39,16 @@
 
   }
 
+  .catalog-card-content-img {
+    width: 100%;
+  }
 
   .catalog-card-content-img img {
     display: block;
     height: 100%;
     width: 100%;
     object-fit: cover;
-
-    border-radius: 5px;
-  }
+    }
 
   @media only screen and (max-width: 400px) {
       .catalog-card {

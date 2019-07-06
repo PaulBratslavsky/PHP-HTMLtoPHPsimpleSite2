@@ -66,6 +66,10 @@ function showLandingPage() { ?>
       padding-bottom: 56.25%; /* 16:9 */
       padding-top: 25px;
       height: 0;
+      border: solid 5px #ffffff;
+      border-radius: 5px;
+
+
     }
     .videoWrapper iframe {
       position: absolute;
@@ -73,6 +77,7 @@ function showLandingPage() { ?>
       left: 0;
       width: 100%;
       height: 100%;
+
     }
 
     @media only screen and (max-width: 988px) {
