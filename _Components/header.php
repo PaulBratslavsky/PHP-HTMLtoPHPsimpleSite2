@@ -7,6 +7,7 @@ include './_Functions/socialMenuFunc.php';
 include './_Functions/showLogoFunc.php';
 include './_Functions/showNavFunc.php';
 include './_Functions/showLandingPage.php';
+include './_Functions/showSingleItemFunc.php';
 
 
 ?>

@@ -48,7 +48,7 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
-    }
+  }
 
   @media only screen and (max-width: 400px) {
       .catalog-card {
@@ -73,13 +73,7 @@
 
         
         <?php foreach ( $catalog as $key => $value) : ?>
-
-          <div class="catalog-card"> 
-            <div class="catalog-card-content-img">
-              <a href=""><img src="<?php echo $value['img']?>" alt="<?php echo $value['title']?>"></a>
-            </div>            
-          </div>
-
+          <?php echo showSingleItemFunc($key, $value); ?>
         <?php endforeach; ?>
 
       </div>
@@ -100,12 +94,8 @@
               <?php foreach ( $catalog as $key => $value) : ?>
 
               <?php if ( $value['category'] == 'Books') : ?>
-                  <div class="catalog-card"> 
-                    <div class="catalog-card-content-img">
-                      <a href=""><img src="<?php echo $value['img']?>" alt="<?php echo $value['title']?>"></a>
-                    </div>            
-                  </div>
-                <?php endif; ?> 
+                <?php echo showSingleItemFunc($key, $value); ?>
+              <?php endif; ?> 
 
               <?php endforeach; ?>
 
@@ -120,11 +110,7 @@
         
               <?php foreach ( $catalog as $key => $value) : ?>
                 <?php if ( $value['category'] == 'Movies') : ?>
-                  <div class="catalog-card"> 
-                    <div class="catalog-card-content-img">
-                      <a href=""><img src="<?php echo $value['img']?>" alt="<?php echo $value['title']?>"></a>
-                    </div>            
-                  </div>
+                  <?php echo showSingleItemFunc($key, $value); ?>
                 <?php endif; ?>  
 
               <?php endforeach; ?>
@@ -141,12 +127,8 @@
               <?php foreach ( $catalog as $key => $value) : ?>
 
               <?php if ( $value['category'] == 'Music') : ?>
-                  <div class="catalog-card"> 
-                    <div class="catalog-card-content-img">
-                      <a href=""><img src="<?php echo $value['img']?>" alt="<?php echo $value['title']?>"></a>
-                    </div>            
-                  </div>
-                <?php endif; ?> 
+                <?php echo showSingleItemFunc($key, $value); ?>
+              <?php endif; ?> 
 
               <?php endforeach; ?>
 
