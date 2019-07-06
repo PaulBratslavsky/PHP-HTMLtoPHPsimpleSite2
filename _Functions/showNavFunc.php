@@ -4,8 +4,8 @@ function showNavFunc() { ?>
 
   <style>
 
-    .padding10 {
-      padding: 0 10px;
+    .padding15 {
+      padding: 0 15px !important;
     }
 
     nav.main-nav {
@@ -41,7 +41,7 @@ function showNavFunc() { ?>
 
     nav.main-nav ul > li {
       list-style: none;
-      margin-left: 1.2rem;
+      margin-right: 10px;
     }
 
     nav.main-nav ul li a {
@@ -57,7 +57,7 @@ function showNavFunc() { ?>
 
 
     <nav class="main-nav col-md-12">
-      <div class="container padding10">
+      <div class="container padding15">
         <ul>
           <li><a href="./index.php">HOME</a></li>
           <li><a href="#">BOOKS</a></li>

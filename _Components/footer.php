@@ -1,11 +1,24 @@
 <!-- =========================
      Section9 - Copyright   
 ============================== -->
+
+<style>
+  footer.copyright-section {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container p {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+
 <footer class="copyright-section">
   <div class="container">
-    <div class="col-md-12 ">
-      <p>© Copyright <?php echo date('Y'); ?> | <a href="#">Dynamic PHP </a>| Designed by <a href="#">Paul Bratslavsky.</a></p>
-    </div>
+      <p>© Copyright <?php echo date('Y'); ?> | <a href="#">Dynamic PHP </a>| PHP by <a href="#">Paul Bratslavsky.</a></p>
   </div>
 </footer>
 

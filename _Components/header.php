@@ -26,6 +26,7 @@ include './_Functions/showLandingPage.php';
 <!-- Custom Style Sheet -->
 <link href="css/style.css" rel="stylesheet">
 
+
 <!--<link rel="shortcut icon" href="img/favicon.png">-->
 </head>
 <body>
@@ -46,6 +47,10 @@ include './_Functions/showLandingPage.php';
 ============================== -->
 
 <style>
+.padding15 {
+  padding: 15px !important;
+}
+
 .flex-col-center {
     display: flex;
     flex-direction: row;
@@ -59,6 +64,7 @@ include './_Functions/showLandingPage.php';
 header.main-header {
   background: #414141;
   padding: 0;
+  min-height: 60px;
 }
 
 div.main-menu {
@@ -73,7 +79,7 @@ div.main-menu {
 ============================== -->
 <header class="main-header">
 
-    <div class="container flex-col-center">          
+    <div class="container padding15 flex-col-center">          
       <?php showLogoFunc(); ?>
       <?php socialMenuFunc(); ?>
     </div>
