@@ -23,7 +23,7 @@ function showLandingPage() { ?>
       align-items: center;
     }
 
-    .verticle-line {
+    .verticle-line-left {
       border-left: solid 5px #CB3E46;
       padding-left: 15px;
     }
@@ -91,7 +91,7 @@ function showLandingPage() { ?>
 
     <div class="flex1 box">
 
-      <div class="verticle-line">
+      <div class="verticle-line-left">
         <h1>Bookly Books<br>
         a journey into a</h1>
         <h2>world of mystery and magic.</h2>

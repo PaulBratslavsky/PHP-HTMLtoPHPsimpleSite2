@@ -46,9 +46,9 @@ function showNavFunc() { ?>
       <div class="container">
         <ul>
           <li><a href="./index.php">HOME</a></li>
-          <li><a href="#">BOOKS</a></li>
-          <li><a href="#">MOVIES</a></li>
-          <li><a href="#">MUSIC</a></li>
+          <li><a href="http://localhost:8888/StaticHTMLtoPHP/catalog.php?category=books">BOOKS</a></li>
+          <li><a href="http://localhost:8888/StaticHTMLtoPHP/catalog.php?category=movies">MOVIES</a></li>
+          <li><a href="http://localhost:8888/StaticHTMLtoPHP/catalog.php?category=music">MUSIC</a></li>
           <li><a href="./suggest.php">SUGGEST</a></li>
         </ul>
       </div>  

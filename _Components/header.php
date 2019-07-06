@@ -15,13 +15,13 @@ include './_Functions/showLandingPage.php';
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title><?php echo 'Home | Welcome'; ?></title>
+  <title><?php echo $pageTitle; ?></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
 
   <!-- Custom Style Sheet -->
-  <link href="css/mystyle.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
   <link rel="shortcut icon" href="img/favicon.png">
 </head>
 
@@ -51,6 +51,7 @@ li {
   margin: 0 auto;
   padding: 0 1rem;
 }
+
 
 .flex-col-center {
   display: flex;
