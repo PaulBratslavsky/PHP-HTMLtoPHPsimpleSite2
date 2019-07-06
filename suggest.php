@@ -1,4 +1,6 @@
 <?php $pageTitle = 'suggest'; ?>
+<?php $whichSection = 'suggest'; ?>
+
 
 
 <?php include './_Components/header.php'; ?>

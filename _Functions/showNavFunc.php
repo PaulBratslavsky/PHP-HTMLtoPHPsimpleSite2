@@ -1,6 +1,5 @@
 <?php 
-
-function showNavFunc() { ?>
+function showNavFunc($section) { ?>
 
   <style>
     nav.main-nav {
@@ -15,9 +14,12 @@ function showNavFunc() { ?>
       display: flex;
       flex-direction: row;
       justify-content: flex-end;
-      align-items: center;
       flex-wrap: wrap;
       width: 100%;
+    }
+
+    .on { 
+      border-bottom: #ca3e47 5px solid;
     }
 
     @media only screen and (max-width: 988px) {
@@ -45,11 +47,12 @@ function showNavFunc() { ?>
     <nav class="main-nav">
       <div class="container">
         <ul>
-          <li><a href="./index.php">HOME</a></li>
-          <li><a href="http://localhost:8888/StaticHTMLtoPHP/catalog.php?category=books">BOOKS</a></li>
-          <li><a href="http://localhost:8888/StaticHTMLtoPHP/catalog.php?category=movies">MOVIES</a></li>
-          <li><a href="http://localhost:8888/StaticHTMLtoPHP/catalog.php?category=music">MUSIC</a></li>
-          <li><a href="./suggest.php">SUGGEST</a></li>
+          <li class="<?php if ($section == "home") { echo 'on'; } ?>"> <a href="./index.php">HOME</a></li>
+          <li class="<?php if ($section == "catalog") { echo 'on'; } ?>"><a href="http://localhost:8888/StaticHTMLtoPHP/catalog.php">CATALOG</a></li>
+          <li class="<?php if ($_GET['category'] == "books") { echo 'on'; } ?>"><a href="http://localhost:8888/StaticHTMLtoPHP/catalog.php?category=books">BOOKS</a></li>
+          <li class="<?php if ($_GET['category'] == "movies") { echo 'on'; } ?>"><a href="http://localhost:8888/StaticHTMLtoPHP/catalog.php?category=movies">MOVIES</a></li>
+          <li class="<?php if ($_GET['category'] == "music") { echo 'on'; } ?>"><a href="http://localhost:8888/StaticHTMLtoPHP/catalog.php?category=music">MUSIC</a></li>
+          <li class="<?php if ($section == "suggest") { echo 'on'; } ?>"><a href="./suggest.php">SUGGEST</a></li>
         </ul>
       </div>  
     </nav>

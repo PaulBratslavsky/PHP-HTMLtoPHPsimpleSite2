@@ -3,60 +3,102 @@
 
 <?php include './_Components/header.php'; ?>
 <?php include './_Data/data.php'; ?>
-
 <style>
   div.catalog {
     min-height: 80vh;
     width: 100%;
     color:  #FFFAFA;
+
     padding: 3rem 0;
+
   }
 
   h1.catalog-title span{
     text-transform: capitalize;
     border-bottom: solid 5px #CB3E46;
+    margin-left: 0.5rem;
   }
 
   .full-catalog-view {
     margin-top: 2rem;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
 
   }
 
   .catalog-card {
-    margin: 1rem;
+    flex-grow: 1;
+    background: rgb(253, 251, 251, 0.95);
+    color: #525252;
+    margin: 0.5rem;
 
-    display: flex;
-    flex-direction: row;
-
-    width: 150px;
-
-    border: solid 5px #ffffff;
-    border-radius: 5px;
+    border-bottom-right-radius: 15px; 
+    border-bottom-left-radius: 15px; 
 
   }
 
+  .catalog-card-header {
+    min-height: 60px;
+
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #fff;
+    background: #CB3E46;
+  }
+
+  .catalog-card-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .catalog-card-content-img {
+    flex-grow: 1;
+    flex: 1;
+    flex-wrap: wrap;
+    min-width: 250px;
+  }
 
   .catalog-card-content-img img {
     display: block;
-    height: 100%;
+    max-height: 400px;
     width: 100%;
+    height: auto;
     object-fit: cover;
-
-    border-radius: 5px;
   }
 
-  @media only screen and (max-width: 400px) {
-      .catalog-card {
-        width: 100%;
-      }
-      
-      h1.catalog-title {
-        text-align: center;
-      }
+  .catalog-card-content-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 250px;
+
+
+    flex-grow: 1;
+    flex: 2;
+    padding: 1rem;
+  }
+
+  button.view-detail {
+      margin-top: 15px;
+      background: #CB3E46;
+      color: #FFFAFA;
+      border: none;
+      font-size: 1.4rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 5px;
+
+      float: right;
+    }
+
+    button.view-detail:hover,
+    button.view-detail:focus {
+      color: #FFFAFA;
+      background: #525252;
+      cursor: pointer;
     }
 
 </style>
@@ -74,9 +116,30 @@
         <?php foreach ( $catalog as $key => $value) : ?>
 
           <div class="catalog-card"> 
-            <div class="catalog-card-content-img">
-              <a href=""><img src="<?php echo $value['img']?>" alt="<?php echo $value['title']?>"></a>
-            </div>            
+            <header class="catalog-card-header">
+              <h3><?php echo $value['title']?></h3>
+            </header>
+
+            <div class="catalog-card-content">
+      
+
+              <div class="catalog-card-content-img">
+                <img src="<?php echo $value['img']?>" alt="<?php echo $value['title']?>">
+              </div>
+
+              <div class="catalog-card-content-text">
+                
+                <div>
+                  <h3>Hello</h3>
+                  <p>Some text</p>
+                </div>
+
+                <div>
+                  <button class="view-detail">Read More</button>
+                </div>
+              </div>
+
+            </div>
           </div>
 
         <?php endforeach; ?>
@@ -92,65 +155,15 @@
       if ( isset($_GET['category']) ) {
 
         switch ( $_GET['category'] ) {
-          case 'books': { 
-            
-            ?><div class="full-catalog-view">
-        
-              <?php foreach ( $catalog as $key => $value) : ?>
-
-              <?php if ( $value['category'] == 'Books') : ?>
-                  <div class="catalog-card"> 
-                    <div class="catalog-card-content-img">
-                      <a href=""><img src="<?php echo $value['img']?>" alt="<?php echo $value['title']?>"></a>
-                    </div>            
-                  </div>
-                <?php endif; ?> 
-
-              <?php endforeach; ?>
-
-            </div><?php
-
+          case 'books': {
             break;
           }
     
           case 'movies': {
-
-            ?><div class="full-catalog-view">
-        
-              <?php foreach ( $catalog as $key => $value) : ?>
-                <?php if ( $value['category'] == 'Movies') : ?>
-                  <div class="catalog-card"> 
-                    <div class="catalog-card-content-img">
-                      <a href=""><img src="<?php echo $value['img']?>" alt="<?php echo $value['title']?>"></a>
-                    </div>            
-                  </div>
-                <?php endif; ?>  
-
-              <?php endforeach; ?>
-
-            </div><?php
-
             break;
           }
     
           case 'music': {
-
-            ?><div class="full-catalog-view">
-        
-              <?php foreach ( $catalog as $key => $value) : ?>
-
-              <?php if ( $value['category'] == 'Music') : ?>
-                  <div class="catalog-card"> 
-                    <div class="catalog-card-content-img">
-                      <a href=""><img src="<?php echo $value['img']?>" alt="<?php echo $value['title']?>"></a>
-                    </div>            
-                  </div>
-                <?php endif; ?> 
-
-              <?php endforeach; ?>
-
-            </div><?php
-
             break;
           }
     

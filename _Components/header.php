@@ -73,6 +73,6 @@ li {
       Header  
 ============================== -->
 <?php showHeaderFunc() ?>
-<?php showNavFunc(); ?>
+<?php showNavFunc($whichSection); ?>
 
 
