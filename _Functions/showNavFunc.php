@@ -3,21 +3,10 @@
 function showNavFunc() { ?>
 
   <style>
-
-    .padding15 {
-      padding: 0 15px !important;
-    }
-
     nav.main-nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      font-size: 2rem;
+      font-size: 1.2rem;
       font-weight: bold;
-
       padding: 10px;
-
       background: #525252;
 
     }
@@ -28,8 +17,6 @@ function showNavFunc() { ?>
       justify-content: flex-end;
       align-items: center;
       flex-wrap: wrap;
-      padding: 0;
-      margin: 0;
       width: 100%;
     }
 
@@ -40,24 +27,23 @@ function showNavFunc() { ?>
     }
 
     nav.main-nav ul > li {
-      list-style: none;
-      margin-right: 10px;
+      margin: 0 0.5rem;
     }
 
     nav.main-nav ul li a {
-      text-decoration: none;
+      color: #cecece;
     }
 
     nav.main-nav ul li a:hover,
     nav.main-nav ul li a:focus {
-      color: white;
+      color: #ca3e47;
     }
 
   </style>
 
 
-    <nav class="main-nav col-md-12">
-      <div class="container padding15">
+    <nav class="main-nav">
+      <div class="container">
         <ul>
           <li><a href="./index.php">HOME</a></li>
           <li><a href="#">BOOKS</a></li>

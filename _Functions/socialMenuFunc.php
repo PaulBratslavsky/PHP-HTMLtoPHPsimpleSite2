@@ -4,7 +4,7 @@ function socialMenuFunc() { ?>
 
 <style>
   nav {
-    flex: 1;
+    flex: 1 auto;
   }
 
   ul.my-social-icons {
@@ -16,13 +16,11 @@ function socialMenuFunc() { ?>
   }
 
   ul.my-social-icons li {
-    margin: 1rem;
+    margin: 0 0.5rem;
     list-style: none;
     height: 40px;
     width: 40px;
     display: inherit;
-
-    border-radious: 50px;
   }
 
   ul.my-social-icons li > a {
@@ -38,13 +36,13 @@ function socialMenuFunc() { ?>
   }
 
   .logo img {
-    padding: 0;;
+    padding: 0;
   }
 
   @media (max-width: 993px) 
   {
     .logo img {
-    padding: 0;;
+    padding: 0;
   }
     
 }
@@ -58,6 +56,6 @@ function socialMenuFunc() { ?>
       </ul>
 </nav>
 
- <?php }
+<?php }
 
 ?>

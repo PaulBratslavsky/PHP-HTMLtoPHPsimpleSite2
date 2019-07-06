@@ -3,22 +3,24 @@
 ============================== -->
 
 <style>
-  footer.copyright-section {
+  footer.main-footer {
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background: #313131;
+    color: #cecece;
   }
 
-  .container p {
-    margin: 0;
-    padding: 0;
+  footer.main-footer a {
+    color: #ca3e47;
   }
 </style>
 
-<footer class="copyright-section">
+<footer class="main-footer">
   <div class="container">
-      <p>© Copyright <?php echo date('Y'); ?> | <a href="#">Dynamic PHP </a>| PHP by <a href="#">Paul Bratslavsky.</a></p>
+      <p>© Copyright <?php echo date('Y'); ?> | <a href="#">Dynamic PHP </a>| PHP and CSS by <a href="#">Paul Bratslavsky.</a></p>
   </div>
 </footer>
 

@@ -4,28 +4,80 @@ function showLandingPage() { ?>
 
 <style>
 
-    .landing-flex {
-      text-align: left;
-      min-height: 75vh;
+    .landing-page {
+      min-height: 80vh;
+      width: 100%;
+      background: url('./img/clouds.jpg') no-repeat center bottom ;
+      /* background-size: cover; */
+      color:  #FFFAFA;
+    }
+    .flex-main {
       display: flex;
-      flex-direction: row;
       justify-content: center;
       align-items: center;
     }
 
-    .flex1 {
-      flex: 1;
-      width: 100%;
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .verticle-line h1 {
-      padding: 0;
-      margin: 0;
+    .verticle-line {
+      border-left: solid 5px #CB3E46;
+      padding-left: 15px;
+    }
+
+    .box p {
+      color: #CB3E46;
+      margin-top: 15px;
+      font-size: 1.4rem;
+    }
+
+
+    button.view-detail {
+      margin-top: 15px;
+      background: #CB3E46;
+      color: #FFFAFA;
+      border: none;
+      font-size: 1.4rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 5px;
+    }
+
+    button.view-detail:hover,
+    button.view-detail:focus {
+      color: #CB3E46;
+      background: #FFFAFA;
+      cursor: pointer;
+    }
+
+
+    .flex1 {
+      flex: 1;
+    }
+
+    .box {
+      padding: 1rem; 
+    }
+
+    .videoWrapper {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      padding-top: 25px;
+      height: 0;
+    }
+    .videoWrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
 
     @media only screen and (max-width: 988px) {
-      .landing-flex {
-        flex-direction: column-reverse;
+      .flex-main {
+        display: block;
       }
       
     }
@@ -33,25 +85,27 @@ function showLandingPage() { ?>
 </style>
 
 <!-- Header Text -->
-<div class="jumbotron">
+<div class="landing-page flex">
 
-  <div class="container landing-flex">
+  <div class="container flex-main">
 
-    <div class="flex1">
+    <div class="flex1 box">
 
       <div class="verticle-line">
-        <h1>Clean & Beautiful<br>
-        landing page template</h1>
-        <h2>with ultimate design & features.</h2>
+        <h1>Bookly Books<br>
+        a journey into a</h1>
+        <h2>world of mystery and magic.</h2>
       </div>
 
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh neque, convallis ut interdum a, consequat sit amet mauris. Vivamus sed tincidunt enim.</p>
-      <button class="view-detail">View Detail</button>
+      <a href="http://localhost:8888/StaticHTMLtoPHP/catalog.php"><button class="view-detail">View Library</button></a>
     
     </div>
 
-    <div class="flex1">
-        <iframe src="https://player.vimeo.com/video/100356812" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <div class="flex1 box">
+      <div class="videoWrapper">
+        <iframe style="border: none;" src="https://www.youtube.com/embed/BQWOJg8E6wE" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
     </div>
 
   </div>
@@ -60,3 +114,4 @@ function showLandingPage() { ?>
 <?php }
 
 ?>
+
