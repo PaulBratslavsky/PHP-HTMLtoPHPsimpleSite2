@@ -10,6 +10,12 @@
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #525252;
+
+}
+
+.white-bg {
+  background-color: #fff;
 }
 
 a {

@@ -14,11 +14,11 @@ switch ( catalogId ) {
     catalogBackgroundImage.style.background = 'url("./img/books.jpg") no-repeat bottom center/cover';
     break;
 
-    case 'movies':
+  case 'movies':
     catalogBackgroundImage.style.background = 'url("./img/movies.jpg") no-repeat top center/cover';
     break;
 
-    case 'music':
+  case 'music':
     catalogBackgroundImage.style.background = 'url("./img/music.jpg") no-repeat center center/cover';
     break;
 

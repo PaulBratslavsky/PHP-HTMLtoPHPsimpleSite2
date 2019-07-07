@@ -5,7 +5,7 @@
 
 <?php showLandingPage(); ?>
 
-<div class="show-random-container"> 
+<div class="white-bg show-random-container"> 
   <div class="container">
 
   <h2><span>Show Suggested<span></h2>
