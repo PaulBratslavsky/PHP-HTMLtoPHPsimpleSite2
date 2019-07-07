@@ -6,6 +6,7 @@
         include './_Functions/showNavFunc.php';
         include './_Functions/showLandingPage.php';
         include './_Functions/showSingleItemFunc.php';
+        include './_Functions/showCategoryFunc.php';
 
         // IMPORT DATA
         include './_Data/data.php'; ?>

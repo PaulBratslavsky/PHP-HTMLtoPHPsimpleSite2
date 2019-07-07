@@ -21,7 +21,7 @@ function showLandingPage() { ?>
 
     <div class="flex1 box">
       <div class="videoWrapper">
-        <iframe style="border: none;" src="https://www.youtube.com/embed/BQWOJg8E6wE" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe class="frame" style="border: none;" src="https://www.youtube.com/embed/BQWOJg8E6wE" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
     </div>
 

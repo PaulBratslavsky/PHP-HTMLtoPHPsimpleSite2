@@ -18,55 +18,21 @@
       <h1 class="catalog-title"><span id="catalogId"><?php echo $_GET['category']; ?></span></h1>
       <?php 
       // check if $_GET is set
+      
       if ( isset($_GET['category']) ) {
         switch ( $_GET['category'] ) {
           case 'books': { 
-      
-            ?><div class="full-catalog-view">
-        
-              <?php foreach ( $catalog as $key => $value) : ?>
-
-              <?php if ( $value['category'] == 'Books') : ?>
-                <?php echo showSingleItemFunc($key, $value); ?>
-              <?php endif; ?> 
-
-              <?php endforeach; ?>
-
-            </div><?php
-
+            showCategoryFunc($catalog, 'books');
             break;
           }
     
           case 'movies': {
-
-            ?><div class="full-catalog-view">
-        
-              <?php foreach ( $catalog as $key => $value) : ?>
-                <?php if ( $value['category'] == 'Movies') : ?>
-                  <?php echo showSingleItemFunc($key, $value); ?>
-                <?php endif; ?>  
-
-              <?php endforeach; ?>
-
-            </div><?php
-
+            showCategoryFunc($catalog, 'movies');
             break;
           }
     
           case 'music': {
-
-            ?><div class="full-catalog-view">
-        
-              <?php foreach ( $catalog as $key => $value) : ?>
-
-              <?php if ( $value['category'] == 'Music') : ?>
-                <?php echo showSingleItemFunc($key, $value); ?>
-              <?php endif; ?> 
-
-              <?php endforeach; ?>
-
-            </div><?php
-
+            showCategoryFunc($catalog, 'books');
             break;
           }
     
