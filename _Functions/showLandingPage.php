@@ -6,7 +6,7 @@ function showLandingPage() { ?>
 
   <div class="container flex-main">
 
-    <div class="flex1 box">
+    <div class="flex-col flex1 box">
 
       <div class="verticle-line-left">
         <h1>Bookly Books<br>
@@ -15,7 +15,7 @@ function showLandingPage() { ?>
       </div>
 
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh neque, convallis ut interdum a, consequat sit amet mauris. Vivamus sed tincidunt enim.</p>
-      <a href="http://localhost:8888/StaticHTMLtoPHP/catalog.php"><button class="view-detail">View Library</button></a>
+      <a href="catalog.php"><button class="view-detail">View Library</button></a>
     
     </div>
 

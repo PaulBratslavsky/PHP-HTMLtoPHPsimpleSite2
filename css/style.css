@@ -26,6 +26,13 @@ li {
   padding: 0 1rem;
 }
 
+.gray-background {
+  background: rgb(65, 65, 65, 0.90);
+}
+
+.white-background {
+  background: rgba(255, 255, 255, 0.9);
+}
 /*  General End               */
 
 /*******************************
@@ -159,9 +166,9 @@ nav.main-nav ul li a:focus {
 *******************************/
 
 .landing-page {
-  min-height: 50vh;
+  min-height: 75vh;
   width: 100%;
-  background: url('../img/clouds.jpg') no-repeat center bottom ;
+  background: url('../img/booklately.jpg') no-repeat center top/cover ;
   color:  #FFFAFA;
   padding: 3rem 0;
 }
@@ -169,7 +176,8 @@ nav.main-nav ul li a:focus {
 .flex-main {
   display: flex;
   justify-content: center;
-  align-items: center;
+
+
 }
 
 .flex {
@@ -183,8 +191,12 @@ nav.main-nav ul li a:focus {
   padding-left: 15px;
 }
 
+.box {
+  margin: 0.5rem;
+}
+
 .box p {
-  color: #CB3E46;
+  color: #ececec;
   margin-top: 15px;
   font-size: 1.4rem;
 }
@@ -197,7 +209,6 @@ button.view-detail {
   border: none;
   font-size: 1.4rem;
   padding: 0.25rem 0.75rem;
-  border-radius: 5px;
 }
 
 button.view-detail:hover,
@@ -207,6 +218,11 @@ button.view-detail:focus {
   cursor: pointer;
 }
 
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 .flex1 {
   flex: 1;
@@ -214,6 +230,7 @@ button.view-detail:focus {
 
 .box {
   padding: 1rem; 
+  min-height: 300px;
 }
 
 .videoWrapper {
@@ -369,6 +386,60 @@ a.back-link:focus {
 
 
 /*******************************
+    Suggest Page Start 
+*******************************/
+
+.suggest-page {
+  min-height: 50vh;
+  width: 100%;
+  background: url('../img/email.jpg') no-repeat center center/cover ;
+  color:  #FFFAFA;
+  padding: 3rem 0;
+}
+
+.name-group {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 0;
+
+}
+
+.name-group label {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.name-group input {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  color: #414141;
+  border: none;
+}
+
+.name-group textarea {
+  min-height: 150px;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border: none;
+}
+
+input.submit {
+  margin-top: 15px;
+  background: #CB3E46;
+  color: #FFFAFA;
+  border: none;
+  font-size: 1.4rem;
+  padding: 0.25rem 0.75rem;
+}
+  
+input.submit:hover,
+input.submit:focus {
+    color: #CB3E46;
+    background: #FFFAFA;
+    cursor: pointer;
+}
+
+/*******************************
     Footer Style Start 
 *******************************/
 
@@ -396,10 +467,6 @@ footer.main-footer a {
 @media only screen and (max-width: 400px) {
     .catalog-card {
       width: 100%;
-    }
-
-    .show-random {
-      flex-direction: column;
     }
 }
 
