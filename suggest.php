@@ -1,3 +1,35 @@
+<?php 
+// HANDLE EMAIL
+/*
+// DOES SAME US BELOW
+if ( isset($_POST['submit']) ) {
+  echo "HELLO";
+}
+*/
+
+if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
+
+  $name     = trim($_POST['name']);
+  $email    = trim($_POST['email']);
+  $details  = trim($_POST['details']);
+
+  if ( $name == '' || !isset($name) || $email == '' || !isset($email) || $details == '' || !isset($details) ) {
+  } else {
+    echo "<h2>Good to go</h2>";
+  }
+
+  // var_dump($_POST);
+
+  $preview = "<h2>Name: {$name}, Email: {$email}, Details: {$details}.</h2>";
+
+  echo $preview;
+
+}
+
+
+
+?>
+
 <?php $pageTitle = 'suggest'; ?>
 <?php $whichSection = 'suggest'; ?>
 
@@ -20,7 +52,7 @@
 
   <div class="flex-col flex1 box gray-background">
     <div class="formWrapper">
-      <form method="POST">
+      <form method="POST" action="suggest.php">
         
           <div class="name-group">
             <label for="name" >Name:</label>
@@ -37,7 +69,7 @@
             <textarea id="details" name="details"></textarea>
           </div>
 
-        <input class="submit" type="submit" value="Send Suggestion" />
+        <input class="submit" name="submit" type="submit" value="Send Suggestion" />
         
       </form>
     </div>
