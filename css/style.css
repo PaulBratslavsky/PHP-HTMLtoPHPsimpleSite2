@@ -39,6 +39,15 @@ li {
 .white-background {
   background: rgba(255, 255, 255, 0.9);
 }
+
+p.error-message {
+  background: #cb3e45;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
 /*  General End               */
 
 /*******************************
@@ -397,6 +406,14 @@ a.back-link:focus {
 
 .suggest-page {
   min-height: 50vh;
+  width: 100%;
+  background: url('../img/email.jpg') no-repeat center center/cover ;
+  color:  #FFFAFA;
+  padding: 3rem 0;
+}
+
+.thankyou-page {
+  min-height: 85vh;
   width: 100%;
   background: url('../img/email.jpg') no-repeat center center/cover ;
   color:  #FFFAFA;

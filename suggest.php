@@ -1,33 +1,27 @@
-<?php 
-// HANDLE EMAIL
-/*
-// DOES SAME US BELOW
-if ( isset($_POST['submit']) ) {
-  echo "HELLO";
-}
-*/
+<?php $error = false; ?>
 
-if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
+<?php // HANDLE EMAIL
 
-  $name     = trim($_POST['name']);
-  $email    = trim($_POST['email']);
-  $details  = trim($_POST['details']);
+      if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 
-  if ( $name == '' || !isset($name) || $email == '' || !isset($email) || $details == '' || !isset($details) ) {
-  } else {
-    echo "<h2>Good to go</h2>";
-  }
-
-  // var_dump($_POST);
-
-  $preview = "<h2>Name: {$name}, Email: {$email}, Details: {$details}.</h2>";
-
-  echo $preview;
-
-}
+        $name     = trim($_POST['name']);
+        $email    = trim($_POST['email']);
+        $details  = trim($_POST['details']);
 
 
+        if ( $name == '' || !isset($name) || $email == '' || !isset($email) || $details == '' || !isset($details) ) {
+          $errorMessage = "Please Complete All Fields";
+          $error = true;
+        } else {
+          
+          $preview = "From: {$name}<br> Email: {$email}<br> Message: {$details}";
+          $error = false;
 
+
+          header("location:suggest.php?status=thankyou&preview={$preview}");
+        }
+
+      }
 ?>
 
 <?php $pageTitle = 'suggest'; ?>
@@ -36,10 +30,8 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 <?php include './_Components/header.php'; ?>
   
 <div class="suggest-page flex">
-
-<div class="container flex-main">
-
-  <div class="flex-col flex1 box gray-background">
+  <div class="container flex-main">
+    <div class="flex-col flex1 box gray-background">
 
     <div class="verticle-line-left">
       <h1>Suggest A Media Item</h1>
@@ -52,26 +44,47 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 
   <div class="flex-col flex1 box gray-background">
     <div class="formWrapper">
+    
+    <?php if ( isset($_GET['status']) && $_GET['status'] == 'thankyou'  ) : ?> 
+      
+      <div class="verticle-line-left">
+        <h1>Your Suggestion Has Been Sent</h1>
+      </div>
+
+      <p class="margin-left-21"><?php echo $_GET['preview']; ?></p>
+
+    <?php else : ?>
+
       <form method="POST" action="suggest.php">
-        
-          <div class="name-group">
-            <label for="name" >Name:</label>
-            <input type="text" id="name" name="name"/>
-          </div>
 
-          <div class="name-group">
-            <label for="email" >Email:</label>
-              <input type="email" id="email" name="email"/>
-          </div>
+        <?php if ( $error ) : ?>
 
-          <div class="name-group">
-            <label for="details" >Enter Your Suggestion:</label>
-            <textarea id="details" name="details"></textarea>
-          </div>
+        <div>
+          <p class="error-message"><?php echo $errorMessage; ?></p>
+        </div>
+
+        <?php endif; ?>
+      
+        <div class="name-group">
+          <label for="name" >Name:</label>
+          <input type="text" id="name" name="name"/>
+        </div>
+
+        <div class="name-group">
+          <label for="email" >Email:</label>
+            <input type="email" id="email" name="email"/>
+        </div>
+
+        <div class="name-group">
+          <label for="details" >Enter Your Suggestion:</label>
+          <textarea id="details" name="details"></textarea>
+        </div>
 
         <input class="submit" name="submit" type="submit" value="Send Suggestion" />
         
       </form>
+
+      <?php endif; ?>
     </div>
   </div>
 
