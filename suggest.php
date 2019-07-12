@@ -1,24 +1,80 @@
-<?php $error = false; ?>
+<?php
+// Import PHPMailer classes into the global namespace
+// These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Load Composer's autoloader
+require './_Vendor/mailer/src/PHPMailer.php'; 
+require './_Vendor/mailer/src/Exception.php';
+require './_Vendor/mailer/src/SMTP.php';
+
+?>
+
+<?php $error = null; ?>
 
 <?php // HANDLE EMAIL
 
       if ( $_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        $name     = trim($_POST['name']);
-        $email    = trim($_POST['email']);
-        $details  = trim($_POST['details']);
+        // USE filter_input() to sanatize input
+        $name     = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+        $email    = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+        $details  = filter_input(INPUT_POST, 'details', FILTER_SANITIZE_SPECIAL_CHARS);
 
+        if ( $name == '' || $email == '' || $details == '' ) {
 
-        if ( $name == '' || !isset($name) || $email == '' || !isset($email) || $details == '' || !isset($details) ) {
           $errorMessage = "Please Complete All Fields";
           $error = true;
+
         } else {
+
+          if ( !PHPMailer::validateAddress($email) ) {
+
+            $errorMessage = "Not Valid Email";
+            $error = true;
+
+          } else {
+
+            $preview = "From: {$name}<br> Email: {$email}<br> Message: {$details}";
+            $error = false;
+            
+            // Create New Email
+            $mail = new PHPMailer();
+
+            //Server settings
+            $mail->SMTPDebug = 2;                                       // Enable verbose debug output
+            $mail->isSMTP();                                            // Set mailer to use SMTP
+            $mail->Host       = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
+            $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+            $mail->Username   = 'paul.bratslavsky@gmail.com';           // SMTP username
+            $mail->Password   = 'xtcuywqgkkbvbszo';                     // SMTP password
+            $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
+            $mail->Port       = 587; 
+            
+
+            // Recipeint
+            $mail->setFrom('paul.bratslavsky@gmail.com', $name);
+            $mail->addReplyTo($email, $name);
+            $mail->addAddress('paul.bratslavsky@gmail.com', 'Paul');
+            $mail->Subject = "New Suggestion from {$name}.";
+            $mail->Body = $details;
+
+            if ( !$mail->send() ) {
+
+              $errorMessage = "There was an error :(";
+              $error = true;
+              
+            } else {
+
+              header("location:suggest.php?status=thankyou&preview={$preview}");
+
+            }
+
+
+
+          }
           
-          $preview = "From: {$name}<br> Email: {$email}<br> Message: {$details}";
-          $error = false;
-
-
-          header("location:suggest.php?status=thankyou&preview={$preview}");
         }
 
       }
@@ -72,7 +128,7 @@
 
         <div class="name-group">
           <label for="email" >Email:</label>
-            <input type="email" id="email" name="email"/>
+            <input type="text" id="email" name="email"/>
         </div>
 
         <div class="name-group">
