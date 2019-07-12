@@ -36,7 +36,8 @@ require './_Vendor/mailer/src/SMTP.php';
 
           } else {
 
-            $preview = "From: {$name}<br> Email: {$email}<br> Message: {$details}";
+            // $preview = "From: {$name}<br> Email: {$email}<br> Message: {$details}";
+            $preview = "Thank you for your suggestion.";
             $error = false;
             
             // Create New Email
@@ -123,17 +124,17 @@ require './_Vendor/mailer/src/SMTP.php';
       
         <div class="name-group">
           <label for="name" >Name:</label>
-          <input type="text" id="name" name="name"/>
+          <input type="text" id="name" name="name" value="<?php echo $name?>"/>
         </div>
 
         <div class="name-group">
           <label for="email" >Email:</label>
-            <input type="text" id="email" name="email"/>
+            <input type="text" id="email" name="email" value="<?php echo $email?>"/>
         </div>
 
         <div class="name-group">
           <label for="details" >Enter Your Suggestion:</label>
-          <textarea id="details" name="details"></textarea>
+          <textarea id="details" name="details"><?php if ( isset($details) ) echo htmlspecialchars($_POST['details']); ?></textarea>
         </div>
 
         <input class="submit" name="submit" type="submit" value="Send Suggestion" />
